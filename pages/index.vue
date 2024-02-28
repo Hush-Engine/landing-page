@@ -19,7 +19,7 @@
   <div>
     <p class="text-center text-3xl font-bold">Start Building Now</p>
     <div class="flex justify-center">
-      <NuxtLink to="/download" class="bg-black text-white p-4 m-4 rounded-lg">Download (coming soon)</NuxtLink>
+      <NuxtLink to="/" class="bg-black text-white p-4 m-4 rounded-lg">Download (coming soon)</NuxtLink>
     </div>
   </div>
 
