@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/content'],
-  content: {},
+  content: {
+    markdown: {
+    },
+    highlight: {
+      theme: 'github-light',
+      preload: ['cpp', 'csharp', 'json', 'python']
+    }
+  },
   googleFonts: {
     families: {
       Poppins: true,
@@ -16,4 +23,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  app: {
+    pageTransition: {
+      mode: 'out-in'
+    }
+  }
 })
