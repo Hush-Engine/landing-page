@@ -22,10 +22,5 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  app: {
-    pageTransition: {
-      mode: 'out-in'
-    }
   }
 })

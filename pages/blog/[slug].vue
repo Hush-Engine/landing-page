@@ -12,27 +12,42 @@ const { slug } = useRoute().params;
           <p class="text-gray-500 text-sm mt-2">{{ DateUtils.toFriendlyString(doc.date) }}</p>
           <p class="text-gray-500 text-sm mt-2">Author: {{ doc.author }}</p>
         </div>
+        <section class="w-full h-screen">
         <img
           v-if="doc.thumbnail"
           :src="doc.thumbnail"
           :alt="doc.title"
-          class="w-full"
+          class="object-cover w-full h-full"
         />
+        </section>
       </header>
       <!-- ./ Header  -->
 
       <!-- Content -->
       <div class="mt-4 content p-5">
-        <!-- Content  -->
         <ContentRenderer :value="doc" />
-        <!-- ./ Content  -->
       </div>
-      <!-- ./ Content  -->
     </ContentDoc>
   </article>
 </template>
 
 <style>
+/**
+ * Hyperlink style
+ */
+.content p a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.content p a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/**
+ * The rest of the MD styling
+ */
 .content p:not(:last-child),
 .content li:not(:last-child),
 .content blockquote:not(:last-child),
@@ -60,4 +75,9 @@ const { slug } = useRoute().params;
 .content h5 {
   @apply text-base font-bold;
 }
+
+.content p {
+  @apply text-lg
+}
+
 </style>
