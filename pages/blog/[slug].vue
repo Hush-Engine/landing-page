@@ -1,16 +1,15 @@
-<script lang="ts" setup>
-const { slug } = useRoute().params;
-</script>
-
 <template>
-  <article class="bg-white rounded-2xl">
-    <ContentDoc :path="`/posts/${slug}`" v-slot="{ doc }">
+  <article class="bg-white rounded-2xl md:pl-20% md:pr-20%">
+    <ContentDoc :path="`/posts/${slug}`" v-slot="{ doc }"  >
       <!-- Header  -->
       <header>
         <div class="text-center p-5">
           <h1 class="text-4xl font-bold lg:w-2/3 mx-auto">{{ doc.title }}</h1>
-          <p class="text-gray-500 text-sm mt-2">{{ DateUtils.toFriendlyString(doc.date) }}</p>
+        </div>
+        <div>
           <p class="text-gray-500 text-sm mt-2">Author: {{ doc.author }}</p>
+          <Avatar :text="doc.author" />
+          <p class="text-gray-500 text-sm mt-2">{{ DateUtils.toFriendlyString(doc.date) }}</p>
         </div>
         <section class="w-full h-screen">
         <img
@@ -81,3 +80,7 @@ const { slug } = useRoute().params;
 }
 
 </style>
+
+<script lang="ts" setup>
+const { slug } = useRoute().params;
+</script>
