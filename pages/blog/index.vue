@@ -25,7 +25,7 @@ useHead({
       <div
         v-for="blog in list"
         :key="blog._path"
-        class="blog-card bg-white rounded-2xl overflow-hidden mb-4"
+        class="blog-card bg-white rounded-2xl overflow-hidden mb-4 md:pl-20% md:pr-20%"
       >
         <div class="h-[300px] relative">
           <img
