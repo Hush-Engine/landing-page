@@ -7,18 +7,10 @@
           <h1 class="text-4xl font-bold lg:w-2/3 mx-auto">{{ doc.title }}</h1>
         </div>
         <div>
+          <!--<Avatar :text="doc.author" />-->
           <p class="text-gray-500 text-sm mt-2">Author: {{ doc.author }}</p>
-          <Avatar :text="doc.author" />
           <p class="text-gray-500 text-sm mt-2">{{ DateUtils.toFriendlyString(doc.date) }}</p>
         </div>
-        <section class="w-full h-screen">
-        <img
-          v-if="doc.thumbnail"
-          :src="doc.thumbnail"
-          :alt="doc.title"
-          class="object-cover w-full h-full"
-        />
-        </section>
       </header>
       <!-- ./ Header  -->
 
